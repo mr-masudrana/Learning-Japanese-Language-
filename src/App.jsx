@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Settings, RefreshCw, Check, X, Trophy, ArrowRight, Home, ChevronLeft, Volume2, Save } from 'lucide-react';
+import { Settings, RefreshCw, Check, X, Trophy, ArrowRight, ChevronLeft, Volume2, VolumeX } from 'lucide-react';
 
-// --- DATA SOURCES (Same as before) ---
+// --- DATA SOURCES ---
 const hiraganaData = [
   // Basic
   { char: 'あ', romaji: 'a', type: 'basic' }, { char: 'い', romaji: 'i', type: 'basic' }, { char: 'う', romaji: 'u', type: 'basic' }, { char: 'え', romaji: 'e', type: 'basic' }, { char: 'お', romaji: 'o', type: 'basic' },
@@ -181,6 +181,62 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
   const [showSettings, setShowSettings] = useState(false);
   const [audioEnabled, setAudioEnabled] = useState(true);
 
+  // Audio Context Ref
+  const audioCtxRef = useRef(null);
+
+  // Initialize Audio Context on first interaction
+  const initAudio = () => {
+    if (!audioCtxRef.current) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      audioCtxRef.current = new AudioContext();
+    }
+    if (audioCtxRef.current.state === 'suspended') {
+      audioCtxRef.current.resume();
+    }
+  };
+
+  // Play Sound Effect (Web Audio API)
+  const playSound = (type) => {
+    if (!audioEnabled || !audioCtxRef.current) return;
+    
+    const ctx = audioCtxRef.current;
+    const osc = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+
+    if (type === 'correct') {
+      // Ding Sound (High sine wave)
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+      gainNode.gain.setValueAtTime(0.3, ctx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.5);
+    } else {
+      // Buzz Sound (Low saw wave)
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(150, ctx.currentTime);
+      osc.frequency.linearRampToValueAtTime(100, ctx.currentTime + 0.3);
+      gainNode.gain.setValueAtTime(0.3, ctx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.3);
+    }
+  };
+
+  // Pronunciation Function (Speech Synthesis)
+  const speak = (text) => {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ja-JP';
+    utterance.rate = 0.8;
+    window.speechSynthesis.speak(utterance);
+  };
+
   // Load High Score
   useEffect(() => {
     const saved = localStorage.getItem(`highscore-${type}`);
@@ -194,17 +250,6 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
       localStorage.setItem(`highscore-${type}`, score);
     }
   }, [score, highScore, type]);
-
-  // Audio Logic
-  const speak = (text) => {
-    if (!audioEnabled || !window.speechSynthesis) return;
-    // Cancel previous speech to avoid overlap
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ja-JP';
-    utterance.rate = 0.8; // Slightly slower for learning
-    window.speechSynthesis.speak(utterance);
-  };
 
   const theme = {
     bg: colorClass === 'pink' ? 'bg-pink-500' : 'bg-indigo-600',
@@ -243,34 +288,42 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
     setOptions(newOptions);
     setIsAnswered(false);
     setSelectedOption(null);
-    
-    // Auto-speak on new question if mode is JP -> Romaji
-    if (mode === 'j-r' && audioEnabled) {
-      setTimeout(() => speak(question.char), 100);
-    }
-  }, [categories, data, mode, audioEnabled]);
+  }, [categories, data]);
 
+  // Initial load
   useEffect(() => {
     generateQuestion();
+    // Initialize audio on mount interaction won't work, so we do it on button click
   }, [generateQuestion]);
+
+  // Logic to handle category change and force new question immediately
+  const handleCategoryChange = (key) => {
+    setCategories(prev => {
+      const newState = { ...prev, [key]: !prev[key] };
+      // Prevent unchecking all
+      if (!newState.basic && !newState.dakuten && !newState.combo) return prev;
+      return newState;
+    });
+    // generateQuestion will be called automatically due to useEffect dependency on generateQuestion which depends on categories
+  };
 
   const handleAnswer = (option) => {
     if (isAnswered) return;
+    initAudio(); // Ensure audio context is ready
     setIsAnswered(true);
     setSelectedOption(option);
 
     const isCorrect = option.romaji === currentQuestion.romaji;
 
-    // Haptic Feedback (Mobile Only)
     if (navigator.vibrate) {
       navigator.vibrate(isCorrect ? 50 : 200);
     }
 
     if (isCorrect) {
+      playSound('correct');
       setScore(s => s + 1);
-      // Speak the character again on correct answer to reinforce
-      speak(currentQuestion.char);
     } else {
+      playSound('wrong');
       setWrong(w => w + 1);
     }
   };
@@ -350,10 +403,13 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
                 <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">সেটিংস</h3>
                 <div className="flex flex-wrap gap-2 mb-4">
                   <button 
-                    onClick={() => setAudioEnabled(!audioEnabled)} 
+                    onClick={() => {
+                        setAudioEnabled(!audioEnabled);
+                        initAudio(); // Initialize audio context on toggle
+                    }} 
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold border transition-all ${audioEnabled ? `${theme.toggleActive} text-white` : 'bg-white text-slate-600'}`}
                   >
-                    {audioEnabled ? <Volume2 size={16} /> : <X size={16} />} সাউন্ড
+                    {audioEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />} সাউন্ড ইফেক্ট
                   </button>
                 </div>
 
@@ -383,7 +439,7 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
         <div className="p-6">
           {!currentQuestion ? (
             <div className="text-center py-10 text-slate-500">
-              <p>কোনো প্রশ্ন পাওয়া যায়নি।</p>
+              <p>কোনো প্রশ্ন পাওয়া যায়নি। অনুগ্রহ করে ক্যাটাগরি চেক করুন।</p>
             </div>
           ) : (
             <>
@@ -391,14 +447,14 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
                 {/* Speak Button (Manual) */}
                 <button 
                   onClick={() => speak(currentQuestion.char)}
-                  className="absolute right-0 top-0 p-2 text-slate-400 hover:text-slate-600 active:scale-90 transition-transform"
+                  className="absolute right-0 top-0 p-3 bg-slate-100 rounded-full text-slate-600 hover:bg-slate-200 active:scale-90 transition-all shadow-sm"
                   title="উচ্চারণ শুনুন"
                 >
                   <Volume2 size={24} />
                 </button>
 
                 <div className="relative group cursor-pointer" onClick={() => speak(currentQuestion.char)}>
-                  <div className={`w-40 h-40 sm:w-48 sm:h-48 bg-white rounded-[2rem] shadow-xl border-4 ${theme.border} flex items-center justify-center relative overflow-hidden`}>
+                  <div className={`w-40 h-40 sm:w-48 sm:h-48 bg-white rounded-[2rem] shadow-xl border-4 ${theme.border} flex items-center justify-center relative overflow-hidden transition-transform active:scale-95`}>
                     {mode === 'j-r' ? (
                       <span className={`jp-font ${getMainFontSize()} font-bold ${theme.textDark} leading-none pb-2 select-none`}>{currentQuestion.char}</span>
                     ) : (
@@ -443,7 +499,7 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
   );
 };
 
-// Sub-component (Same as before)
+// Sub-component
 const CategoryToggle = ({ label, active, onClick, theme }) => (
   <button onClick={onClick} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold border transition-all ${active ? `${theme.toggleActive} text-white shadow-sm` : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}`}>
     {active && <Check size={14} strokeWidth={3} />}
