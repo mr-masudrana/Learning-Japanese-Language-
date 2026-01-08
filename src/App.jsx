@@ -70,6 +70,24 @@ const katakanaData = [
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
 
+  // Browser Back Button Logic
+  useEffect(() => {
+    // When view changes to something other than home, push a state
+    if (currentView !== 'home') {
+      window.history.pushState({ view: currentView }, '');
+    }
+
+    const handlePopState = (event) => {
+      // If we are not in home, go back to home
+      if (currentView !== 'home') {
+        setCurrentView('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [currentView]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-indigo-50 font-sans">
       <style>{`
@@ -88,7 +106,10 @@ export default function App() {
           data={hiraganaData} 
           title="হিরাগানা" 
           colorClass="indigo"
-          onBack={() => setCurrentView('home')} 
+          onBack={() => {
+            if(window.history.state) window.history.back(); // Sync with browser history
+            else setCurrentView('home');
+          }} 
         />
       )}
 
@@ -98,7 +119,10 @@ export default function App() {
           data={katakanaData} 
           title="কাতাকানা" 
           colorClass="pink"
-          onBack={() => setCurrentView('home')} 
+          onBack={() => {
+             if(window.history.state) window.history.back(); // Sync with browser history
+             else setCurrentView('home');
+          }} 
         />
       )}
     </div>
@@ -163,13 +187,27 @@ const HomePage = ({ onSelect }) => {
 
 // --- QUIZ COMPONENT ---
 const QuizPage = ({ type, data, title, colorClass, onBack }) => {
-  const [categories, setCategories] = useState({
-    basic: true,
-    dakuten: false,
-    combo: false
+  // PERSISTED STATE LOGIC
+  const [categories, setCategories] = useState(() => {
+    const saved = localStorage.getItem('app-categories');
+    return saved ? JSON.parse(saved) : { basic: true, dakuten: false, combo: false };
+  });
+
+  const [mode, setMode] = useState(() => {
+    const saved = localStorage.getItem('app-mode');
+    return saved ? saved : 'j-r';
   });
   
-  const [mode, setMode] = useState('j-r');
+  const [audioEnabled, setAudioEnabled] = useState(() => {
+    const saved = localStorage.getItem('app-audio');
+    return saved ? JSON.parse(saved) : true;
+  });
+
+  // Save changes to localStorage
+  useEffect(() => { localStorage.setItem('app-categories', JSON.stringify(categories)); }, [categories]);
+  useEffect(() => { localStorage.setItem('app-mode', mode); }, [mode]);
+  useEffect(() => { localStorage.setItem('app-audio', JSON.stringify(audioEnabled)); }, [audioEnabled]);
+
   const [score, setScore] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -179,12 +217,10 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [audioEnabled, setAudioEnabled] = useState(true);
 
   // Audio Context Ref
   const audioCtxRef = useRef(null);
 
-  // Initialize Audio Context on first interaction
   const initAudio = () => {
     if (!audioCtxRef.current) {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -195,7 +231,6 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
     }
   };
 
-  // Play Sound Effect (Web Audio API)
   const playSound = (type) => {
     if (!audioEnabled || !audioCtxRef.current) return;
     
@@ -207,7 +242,6 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
     gainNode.connect(ctx.destination);
 
     if (type === 'correct') {
-      // Ding Sound (High sine wave)
       osc.type = 'sine';
       osc.frequency.setValueAtTime(800, ctx.currentTime);
       osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
@@ -216,7 +250,6 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
       osc.start();
       osc.stop(ctx.currentTime + 0.5);
     } else {
-      // Buzz Sound (Low saw wave)
       osc.type = 'sawtooth';
       osc.frequency.setValueAtTime(150, ctx.currentTime);
       osc.frequency.linearRampToValueAtTime(100, ctx.currentTime + 0.3);
@@ -227,7 +260,6 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
     }
   };
 
-  // Pronunciation Function (Speech Synthesis)
   const speak = (text) => {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -237,13 +269,11 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
     window.speechSynthesis.speak(utterance);
   };
 
-  // Load High Score
   useEffect(() => {
     const saved = localStorage.getItem(`highscore-${type}`);
     if (saved) setHighScore(parseInt(saved, 10));
   }, [type]);
 
-  // Save High Score
   useEffect(() => {
     if (score > highScore) {
       setHighScore(score);
@@ -290,26 +320,21 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
     setSelectedOption(null);
   }, [categories, data]);
 
-  // Initial load
   useEffect(() => {
     generateQuestion();
-    // Initialize audio on mount interaction won't work, so we do it on button click
   }, [generateQuestion]);
 
-  // Logic to handle category change and force new question immediately
   const handleCategoryChange = (key) => {
     setCategories(prev => {
       const newState = { ...prev, [key]: !prev[key] };
-      // Prevent unchecking all
       if (!newState.basic && !newState.dakuten && !newState.combo) return prev;
       return newState;
     });
-    // generateQuestion will be called automatically due to useEffect dependency on generateQuestion which depends on categories
   };
 
   const handleAnswer = (option) => {
     if (isAnswered) return;
-    initAudio(); // Ensure audio context is ready
+    initAudio();
     setIsAnswered(true);
     setSelectedOption(option);
 
@@ -405,7 +430,7 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
                   <button 
                     onClick={() => {
                         setAudioEnabled(!audioEnabled);
-                        initAudio(); // Initialize audio context on toggle
+                        initAudio();
                     }} 
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold border transition-all ${audioEnabled ? `${theme.toggleActive} text-white` : 'bg-white text-slate-600'}`}
                   >
@@ -434,7 +459,7 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
             </div>
           </div>
         )}
-
+        
         {/* QUIZ AREA */}
         <div className="p-6">
           {!currentQuestion ? (
@@ -444,7 +469,6 @@ const QuizPage = ({ type, data, title, colorClass, onBack }) => {
           ) : (
             <>
               <div className="flex justify-center mb-8 relative">
-                {/* Speak Button (Manual) */}
                 <button 
                   onClick={() => speak(currentQuestion.char)}
                   className="absolute right-0 top-0 p-3 bg-slate-100 rounded-full text-slate-600 hover:bg-slate-200 active:scale-90 transition-all shadow-sm"
