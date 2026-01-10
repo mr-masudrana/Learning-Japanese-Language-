@@ -516,7 +516,7 @@ const QuizPage = ({ type, config, onBack, onCorrectAnswer }) => {
         <div className="flex flex-col items-center">
            <h1 className="text-lg font-bold tracking-wide drop-shadow-md">{title}</h1>
            <div className="flex items-center gap-1.5 text-[10px] font-bold opacity-90 bg-black/10 dark:bg-black/30 px-2 py-0.5 rounded-full">
-             <Trophy size={10} className="text-yellow-300" /> TOP: {highScore}
+             <Trophy size={10} className="text-yellow-300" /> TOP: {level}
            </div>
         </div>
 
