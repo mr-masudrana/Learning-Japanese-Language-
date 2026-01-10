@@ -518,6 +518,9 @@ const QuizPage = ({ type, config, onBack, onCorrectAnswer }) => {
            <div className="flex items-center gap-1.5 text-[10px] font-bold opacity-90 bg-black/10 dark:bg-black/30 px-2 py-0.5 rounded-full">
              <Trophy size={10} className="text-yellow-300" /> TOP: {highScore}
            </div>
+           <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold opacity-90">
+             <Star size={12} className="text-indigo-200 fill-current" /> LVL: {level}
+           </div>
         </div>
 
         <button onClick={() => setShowSettings(true)} className="p-2 bg-white/20 hover:bg-white/30 dark:bg-slate-800/30 dark:hover:bg-slate-800/50 backdrop-blur-md rounded-xl transition-all btn-press border border-white/10">
