@@ -54,13 +54,109 @@ const kanjiData = [
 ];
 
 const vocabData = [
-  { char: 'おはよう', romaji: 'ohayou', meaning: 'সুপ্রভাত', type: 'greetings' }, { char: 'こんにちは', romaji: 'konnichiwa', meaning: 'হ্যালো', type: 'greetings' },
-  { char: 'こんばんは', romaji: 'konbanwa', meaning: 'শুভ সন্ধ্যা', type: 'greetings' }, { char: 'さようなら', romaji: 'sayounara', meaning: 'বিদায়', type: 'greetings' },
-  { char: 'ありがとう', romaji: 'arigatou', meaning: 'ধন্যবাদ', type: 'greetings' }, { char: 'すみません', romaji: 'sumimasen', meaning: 'মাফ করবেন', type: 'greetings' },
-  { char: 'ねこ', romaji: 'neko', meaning: 'বিড়াল', type: 'daily' }, { char: 'いぬ', romaji: 'inu', meaning: 'কুকুর', type: 'daily' },
-  { char: 'ほん', romaji: 'hon', meaning: 'বই', type: 'daily' }, { char: 'えんぴつ', romaji: 'enpitsu', meaning: 'পেন্সিল', type: 'daily' },
-  { char: 'くるま', romaji: 'kuruma', meaning: 'গাড়ি', type: 'daily' }, { char: 'いえ', romaji: 'ie', meaning: 'বাড়ি', type: 'daily' },
-  { char: 'がっこう', romaji: 'gakkou', meaning: 'স্কুল', type: 'daily' }, { char: 'せんせい', romaji: 'sensei', meaning: 'শিক্ষক', type: 'daily' },
+  // --- Greetings ---
+  { char: 'おはよう', romaji: 'ohayou', meaning: 'সুপ্রভাত', type: 'greetings' },
+  { char: 'こんにちは', romaji: 'konnichiwa', meaning: 'হ্যালো', type: 'greetings' },
+  { char: 'こんばんは', romaji: 'konbanwa', meaning: 'শুভ সন্ধ্যা', type: 'greetings' },
+  { char: 'さようなら', romaji: 'sayounara', meaning: 'বিদায়', type: 'greetings' },
+  { char: 'ありがとう', romaji: 'arigatou', meaning: 'ধন্যবাদ', type: 'greetings' },
+  { char: 'すみません', romaji: 'sumimasen', meaning: 'মাফ করবেন', type: 'greetings' },
+
+  // --- Daily Items ---
+  { char: 'ねこ', romaji: 'neko', meaning: 'বিড়াল', type: 'daily' },
+  { char: 'いぬ', romaji: 'inu', meaning: 'কুকুর', type: 'daily' },
+  { char: 'ほん', romaji: 'hon', meaning: 'বই', type: 'daily' },
+  { char: 'えんぴつ', romaji: 'enpitsu', meaning: 'পেন্সিল', type: 'daily' },
+  { char: 'くるま', romaji: 'kuruma', meaning: 'গাড়ি', type: 'daily' },
+  { char: 'いえ', romaji: 'ie', meaning: 'বাড়ি', type: 'daily' },
+  { char: 'がっこう', romaji: 'gakkou', meaning: 'স্কুল', type: 'daily' },
+  { char: 'せんせい', romaji: 'sensei', meaning: 'শিক্ষক', type: 'daily' },
+
+  // --- Colors ---
+  { char: 'しろい', romaji: 'shiroi', meaning: 'সাদা', type: 'color' },
+  { char: 'くろい', romaji: 'kuroi', meaning: 'কালো', type: 'color' },
+  { char: 'あかい', romaji: 'akai', meaning: 'লাল', type: 'color' },
+  { char: 'あおい', romaji: 'aoi', meaning: 'নীল', type: 'color' },
+  { char: 'みどり', romaji: 'midori', meaning: 'সবুজ', type: 'color' },
+  { char: 'むらさき', romaji: 'murasaki', meaning: 'বেগুনি', type: 'color' },
+  { char: 'きいろ', romaji: 'kiiro', meaning: 'হলুদ', type: 'color' },
+  { char: 'ちゃいろ', romaji: 'chairo', meaning: 'বাদামি', type: 'color' },
+  { char: 'ピンク', romaji: 'pinku', meaning: 'গোলাপি', type: 'color' },
+  { char: 'オレンジ', romaji: 'orenji', meaning: 'কমলা', type: 'color' },
+  { char: 'グレー', romaji: 'guree', meaning: 'ধূসর', type: 'color' },
+  { char: 'ベージュ', romaji: 'beeju', meaning: 'বেইজ', type: 'color' },
+
+  // --- Taste ---
+  { char: 'あまい', romaji: 'amai', meaning: 'মিষ্টি', type: 'taste' },
+  { char: 'からい', romaji: 'karai', meaning: 'ঝাল', type: 'taste' },
+  { char: 'にがい', romaji: 'nigai', meaning: 'তিক্ত', type: 'taste' },
+  { char: 'しおからい', romaji: 'shiokarai', meaning: 'নোনতা', type: 'taste' },
+  { char: 'すっぱい', romaji: 'suppai', meaning: 'টক', type: 'taste' },
+  { char: 'こい', romaji: 'koi', meaning: 'গাঢ়/স্ট্রং', type: 'taste' },
+  { char: 'うすい', romaji: 'usui', meaning: 'হালকা/উইক', type: 'taste' },
+
+  // --- Family ---
+  { char: 'そぼ', romaji: 'sobo', meaning: 'দাদি/নানী', type: 'family' },
+  { char: 'そふ', romaji: 'sofu', meaning: 'দাদা/নানা', type: 'family' },
+  { char: 'おばあさん', romaji: 'obaasan', meaning: 'দাদী/নানী (অন্যের)', type: 'family' },
+  { char: 'おじいさん', romaji: 'ojiisan', meaning: 'দাদা/নানা (অন্যের)', type: 'family' },
+  { char: 'そふぼ', romaji: 'sofubo', meaning: 'দাদা-দাদি/নানা-নানী', type: 'family' },
+
+  { char: 'はは', romaji: 'haha', meaning: 'মা', type: 'family' },
+  { char: 'ちち', romaji: 'chichi', meaning: 'বাবা', type: 'family' },
+  { char: 'おかあさん', romaji: 'okaasan', meaning: 'মা (অন্যের)', type: 'family' },
+  { char: 'おとうさん', romaji: 'otousan', meaning: 'বাবা (অন্যের)', type: 'family' },
+
+  { char: 'りょうしん', romaji: 'ryoushin', meaning: 'পিতামাতা', type: 'family' },
+  { char: 'ごりょうしん', romaji: 'goryoushin', meaning: 'পিতামাতা (অন্যের)', type: 'family' },
+
+  { char: 'いもうと', romaji: 'imouto', meaning: 'ছোট বোন', type: 'family' },
+  { char: 'いもうとさん', romaji: 'imoutosan', meaning: 'ছোট বোন (অন্যের)', type: 'family' },
+
+  { char: 'おとうと', romaji: 'otouto', meaning: 'ছোট ভাই', type: 'family' },
+  { char: 'おとうとさん', romaji: 'otoutosan', meaning: 'ছোট ভাই (অন্যের)', type: 'family' },
+
+  { char: 'あね', romaji: 'ane', meaning: 'বড় বোন', type: 'family' },
+  { char: 'あに', romaji: 'ani', meaning: 'বড় ভাই', type: 'family' },
+  { char: 'おねえさん', romaji: 'oneesan', meaning: 'বড় বোন (অন্যের)', type: 'family' },
+  { char: 'おにいさん', romaji: 'oniisan', meaning: 'বড় ভাই (অন্যের)', type: 'family' },
+
+  { char: 'きょうだい', romaji: 'kyoudai', meaning: 'ভাইবোন', type: 'family' },
+  { char: 'ごきょうだい', romaji: 'gokyoudai', meaning: 'ভাইবোন (অন্যের)', type: 'family' },
+
+  { char: 'つま', romaji: 'tsuma', meaning: 'স্ত্রী', type: 'family' },
+  { char: 'おくさん', romaji: 'okusan', meaning: 'স্ত্রী (অন্যের)', type: 'family' },
+
+  { char: 'おっと', romaji: 'otto', meaning: 'স্বামী', type: 'family' },
+  { char: 'ごしゅじん', romaji: 'goshujin', meaning: 'স্বামী (অন্যের)', type: 'family' },
+
+  { char: 'ふうふ', romaji: 'fuufu', meaning: 'স্বামী-স্ত্রী', type: 'family' },
+
+  { char: 'むすめ', romaji: 'musume', meaning: 'মেয়ে সন্তান', type: 'family' },
+  { char: 'むすめさん', romaji: 'musumesan', meaning: 'মেয়ে সন্তান (অন্যের)', type: 'family' },
+
+  { char: 'むすこ', romaji: 'musuko', meaning: 'ছেলে সন্তান', type: 'family' },
+  { char: 'むすこさん', romaji: 'musukosan', meaning: 'ছেলে সন্তান (অন্যের)', type: 'family' },
+
+  { char: 'こども', romaji: 'kodomo', meaning: 'সন্তান/বাচ্চা', type: 'family' },
+  { char: 'おこさん', romaji: 'okosan', meaning: 'সন্তান/বাচ্চা (অন্যের)', type: 'family' },
+
+  // --- Daily Conversation ---
+  { char: 'おはようございます', romaji: 'ohayou gozaimasu', meaning: 'শুভ সকাল', type: 'conversation' },
+  { char: 'こんにちは', romaji: 'konnichiwa', meaning: 'শুভ দুপুর/হ্যালো', type: 'conversation' },
+  { char: 'こんばんは', romaji: 'konbanwa', meaning: 'শুভ সন্ধ্যা', type: 'conversation' },
+  { char: 'おやすみなさい', romaji: 'oyasuminasai', meaning: 'শুভ রাত্রি', type: 'conversation' },
+  { char: 'さようなら', romaji: 'sayounara', meaning: 'বিদায়', type: 'conversation' },
+  { char: 'ありがとうございます', romaji: 'arigatou gozaimasu', meaning: 'অনেক ধন্যবাদ', type: 'conversation' },
+  { char: 'おげんきですか', romaji: 'ogenki desuka', meaning: 'আপনি কেমন আছেন?', type: 'conversation' },
+  { char: 'すみません', romaji: 'sumimasen', meaning: 'মাফ করবেন', type: 'conversation' },
+  { char: 'おねがいします', romaji: 'onegai shimasu', meaning: 'অনুগ্রহ করে', type: 'conversation' },
+  { char: 'はじめましょう', romaji: 'hajimemashou', meaning: 'চলুন শুরু করি', type: 'conversation' },
+  { char: 'やすみましょう', romaji: 'yasumimashou', meaning: 'চলুন বিরতি নেই', type: 'conversation' },
+  { char: 'おわりましょう', romaji: 'owarimashou', meaning: 'চলুন শেষ করি', type: 'conversation' },
+  { char: 'わかりますか', romaji: 'wakarimasuka', meaning: 'বোঝেন?', type: 'conversation' },
+  { char: 'もういちどおねがいします', romaji: 'mou ichido onegai shimasu', meaning: 'আরেকবার বলবেন অনুগ্রহ করে', type: 'conversation' },
+  { char: 'けっこうです', romaji: 'kekkou desu', meaning: 'ঠিক আছে/ভালো', type: 'conversation' },
 ];
 
 // --- STATIC CONFIGURATION (Moved outside App to prevent re-renders) ---
