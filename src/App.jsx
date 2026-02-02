@@ -54,14 +54,112 @@ const kanjiData = [
 ];
 
 const vocabData = [
-  // --- Greetings ---
-  { char: 'おはよう', romaji: 'ohayou', meaning: 'সুপ্রভাত', type: 'greetings' },
-  { char: 'こんにちは', romaji: 'konnichiwa', meaning: 'হ্যালো', type: 'greetings' },
-  { char: 'こんばんは', romaji: 'konbanwa', meaning: 'শুভ সন্ধ্যা', type: 'greetings' },
-  { char: 'さようなら', romaji: 'sayounara', meaning: 'বিদায়', type: 'greetings' },
-  { char: 'ありがとう', romaji: 'arigatou', meaning: 'ধন্যবাদ', type: 'greetings' },
-  { char: 'すみません', romaji: 'sumimasen', meaning: 'মাফ করবেন', type: 'greetings' },
 
+  // --- Lesson 01 ---
+  { char: 'わたし', romaji: 'watashi', meaning: 'আমি', type: 'lesson01' },
+  { char: 'あなた', romaji: 'anata', meaning: 'আপনি / তুমি', type: 'lesson01' },
+  { char: 'あのひと', romaji: 'ano hito', meaning: 'ওই ব্যক্তি (he/she)', type: 'lesson01' },
+  { char: 'あのかた', romaji: 'ano kata', meaning: 'ওই ভদ্র ব্যক্তি', type: 'lesson01' },
+
+  { char: '～さん', romaji: '~san', meaning: 'জনাব / জনাবা (নামের পরে)', type: 'lesson01' },
+  { char: '～ちゃん', romaji: '~chan', meaning: 'শিশু বা ঘনিষ্ঠ ডাকনাম', type: 'lesson01' },
+  { char: '～じん', romaji: '~jin', meaning: 'দেশের নাগরিক (যেমন: アメリカじん)', type: 'lesson01' },
+
+  { char: 'せんせい', romaji: 'sensei', meaning: 'শিক্ষক (নিজের জন্য ব্যবহার হয় না)', type: 'lesson01' },
+  { char: 'きょうし', romaji: 'kyoushi', meaning: 'শিক্ষক', type: 'lesson01' },
+  { char: 'がくせい', romaji: 'gakusei', meaning: 'ছাত্র / ছাত্রী', type: 'lesson01' },
+
+  { char: 'かいしゃいん', romaji: 'kaishain', meaning: 'কোম্পানির কর্মচারী', type: 'lesson01' },
+  { char: 'しゃいん', romaji: 'shain', meaning: 'কর্মচারী', type: 'lesson01' },
+
+  { char: 'ぎんこういん', romaji: 'ginkouin', meaning: 'ব্যাংকের কর্মচারী', type: 'lesson01' },
+  { char: 'いしゃ', romaji: 'isha', meaning: 'ডাক্তার', type: 'lesson01' },
+  { char: 'けんきゅうしゃ', romaji: 'kenkyuusha', meaning: 'গবেষক', type: 'lesson01' },
+
+  { char: 'だいがく', romaji: 'daigaku', meaning: 'বিশ্ববিদ্যালয়', type: 'lesson01' },
+  { char: 'びょういん', romaji: 'byouin', meaning: 'হাসপাতাল', type: 'lesson01' },
+
+  { char: 'だれ', romaji: 'dare', meaning: 'কে', type: 'lesson01' },
+  { char: 'どなた', romaji: 'donata', meaning: 'কে (ভদ্র ভাষা)', type: 'lesson01' },
+
+  { char: '～さい', romaji: '~sai', meaning: 'বছর বয়স', type: 'lesson01' },
+  { char: 'なんさい', romaji: 'nansai', meaning: 'কত বছর বয়স', type: 'lesson01' },
+  { char: 'おいくつ', romaji: 'oikutsu', meaning: 'কত বছর বয়স (ভদ্র)', type: 'lesson01' },
+
+  { char: 'はい', romaji: 'hai', meaning: 'হ্যাঁ', type: 'lesson01' },
+  { char: 'いいえ', romaji: 'iie', meaning: 'না', type: 'lesson01' },
+  
+  // --- Lesson 02 ---
+  { char: 'これ', romaji: 'kore', meaning: 'এটি (এই জিনিস)', type: 'lesson02' },
+  { char: 'それ', romaji: 'sore', meaning: 'ওটি (আপনার কাছে থাকা জিনিস)', type: 'lesson02' },
+  { char: 'あれ', romaji: 'are', meaning: 'ওটা (ওখানে থাকা জিনিস)', type: 'lesson02' },
+
+  { char: 'この～', romaji: 'kono ~', meaning: 'এই ~ (এখানে)', type: 'lesson02' },
+  { char: 'その～', romaji: 'sono ~', meaning: 'ওই ~ (আপনার কাছে)', type: 'lesson02' },
+  { char: 'あの～', romaji: 'ano ~', meaning: 'ওই ~ (ওখানে)', type: 'lesson02' },
+
+  { char: 'ほん', romaji: 'hon', meaning: 'বই', type: 'lesson02' },
+  { char: 'じしょ', romaji: 'jisho', meaning: 'অভিধান', type: 'lesson02' },
+  { char: 'ざっし', romaji: 'zasshi', meaning: 'ম্যাগাজিন', type: 'lesson02' },
+  { char: 'しんぶん', romaji: 'shinbun', meaning: 'সংবাদপত্র', type: 'lesson02' },
+  { char: 'ノート', romaji: 'nooto', meaning: 'নোটবুক', type: 'lesson02' },
+  { char: 'てちょう', romaji: 'techou', meaning: 'ডায়েরি / ব্যক্তিগত নোটবই', type: 'lesson02' },
+  { char: 'めいし', romaji: 'meishi', meaning: 'ভিজিটিং কার্ড', type: 'lesson02' },
+  { char: 'カード', romaji: 'kaado', meaning: 'কার্ড (ক্রেডিট কার্ড)', type: 'lesson02' },
+
+  { char: 'えんぴつ', romaji: 'enpitsu', meaning: 'পেন্সিল', type: 'lesson02' },
+  { char: 'ボールペン', romaji: 'boorupen', meaning: 'বলপেন', type: 'lesson02' },
+  { char: 'シャープペンシル', romaji: 'shaapu penshiru', meaning: 'মেকানিক্যাল পেন্সিল', type: 'lesson02' },
+
+  { char: 'かぎ', romaji: 'kagi', meaning: 'চাবি', type: 'lesson02' },
+  { char: 'とけい', romaji: 'tokei', meaning: 'ঘড়ি', type: 'lesson02' },
+  { char: 'かさ', romaji: 'kasa', meaning: 'ছাতা', type: 'lesson02' },
+  { char: 'かばん', romaji: 'kaban', meaning: 'ব্যাগ', type: 'lesson02' },
+
+  { char: 'CD', romaji: 'shiidii', meaning: 'সিডি', type: 'lesson02' },
+
+  { char: 'テレビ', romaji: 'terebi', meaning: 'টেলিভিশন', type: 'lesson02' },
+  { char: 'ラジオ', romaji: 'rajio', meaning: 'রেডিও', type: 'lesson02' },
+  { char: 'カメラ', romaji: 'kamera', meaning: 'ক্যামেরা', type: 'lesson02' },
+  { char: 'コンピューター', romaji: 'konpyuutaa', meaning: 'কম্পিউটার', type: 'lesson02' },
+  { char: 'くるま', romaji: 'kuruma', meaning: 'গাড়ি', type: 'lesson02' },
+
+  { char: 'つくえ', romaji: 'tsukue', meaning: 'টেবিল / ডেস্ক', type: 'lesson02' },
+  { char: 'いす', romaji: 'isu', meaning: 'চেয়ার', type: 'lesson02' },
+
+  { char: 'チョコレート', romaji: 'chokoreeto', meaning: 'চকলেট', type: 'lesson02' },
+  { char: 'コーヒー', romaji: 'koohii', meaning: 'কফি', type: 'lesson02' },
+
+  // --- Lesson 03 ---
+  { char: 'ここ', romaji: 'koko', meaning: 'এখানে / এই জায়গা', type: 'lesson03' },
+  { char: 'そこ', romaji: 'soko', meaning: 'ওখানে (শ্রোতার কাছে)', type: 'lesson03' },
+  { char: 'あそこ', romaji: 'asoko', meaning: 'ওখানে (দূরে)', type: 'lesson03' },
+  { char: 'どこ', romaji: 'doko', meaning: 'কোথায়', type: 'lesson03' },
+
+  { char: 'こちら', romaji: 'kochira', meaning: 'এই দিক / এখানে (ভদ্র)', type: 'lesson03' },
+  { char: 'そちら', romaji: 'sochira', meaning: 'ওই দিক / ওখানে (ভদ্র)', type: 'lesson03' },
+  { char: 'あちら', romaji: 'achira', meaning: 'ওই দিক / ওখানে (দূরে, ভদ্র)', type: 'lesson03' },
+  { char: 'どちら', romaji: 'dochira', meaning: 'কোন দিক / কোথায় (ভদ্র)', type: 'lesson03' },
+
+  { char: 'きょうしつ', romaji: 'kyoushitsu', meaning: 'ক্লাসরুম', type: 'lesson03' },
+  { char: 'しょくどう', romaji: 'shokudou', meaning: 'ক্যান্টিন / ডাইনিং হল', type: 'lesson03' },
+  { char: 'じむしょ', romaji: 'jimusho', meaning: 'অফিস', type: 'lesson03' },
+  { char: 'かいぎしつ', romaji: 'kaigishitsu', meaning: 'মিটিং রুম', type: 'lesson03' },
+  { char: 'うけつけ', romaji: 'uketsuke', meaning: 'রিসেপশন', type: 'lesson03' },
+  { char: 'ロビー', romaji: 'robii', meaning: 'লবি', type: 'lesson03' },
+  { char: 'へや', romaji: 'heya', meaning: 'রুম / ঘর', type: 'lesson03' },
+  { char: 'トイレ', romaji: 'toire', meaning: 'টয়লেট', type: 'lesson03' },
+
+  { char: 'かいだん', romaji: 'kaidan', meaning: 'সিঁড়ি', type: 'lesson03' },
+  { char: 'エレベーター', romaji: 'erebeetaa', meaning: 'লিফট', type: 'lesson03' },
+  { char: 'エスカレーター', romaji: 'esukareetaa', meaning: 'এস্কেলেটর', type: 'lesson03' },
+  { char: 'じどうはんばいき', romaji: 'jidou hanbaiki', meaning: 'ভেন্ডিং মেশিন', type: 'lesson03' },
+
+  { char: 'でんわ', romaji: 'denwa', meaning: 'টেলিফোন / ফোন কল', type: 'lesson03' },
+  { char: 'おくに', romaji: 'okuni', meaning: 'দেশ', type: 'lesson03' },
+  { char: 'かいしゃ', romaji: 'kaisha', meaning: 'কোম্পানি', type: 'lesson03' },
+  { char: 'うち', romaji: 'uchi', meaning: 'বাড়ি / ঘর', type: 'lesson03' },
+  
   // --- Daily Items ---
   { char: 'ねこ', romaji: 'neko', meaning: 'বিড়াল', type: 'daily' },
   { char: 'いぬ', romaji: 'inu', meaning: 'কুকুর', type: 'daily' },
