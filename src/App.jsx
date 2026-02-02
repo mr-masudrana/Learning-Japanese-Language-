@@ -293,7 +293,7 @@ const quizConfig = {
     gradient: "from-teal-500 to-emerald-600",
     darkGradient: "dark:from-teal-800 dark:to-emerald-900",
     accent: "text-teal-600 dark:text-teal-400",
-    categories: [{ id: 'greetings', label: 'শুভেচ্ছা' }, { id: 'daily', label: 'দৈনন্দিন' }, { id: 'color', label: 'রং' }, { id: 'taste', label: 'স্বাদ' }, { id: 'family', label: 'পরিবার' }, { id: 'conversation', label: 'দৈনন্দিন কথা' }]
+    categories: [{ id: 'lesson01', label: 'লেসন-০১' }, { id: 'lesson02', label: 'লেসন-০২' }, { id: 'lesson03', label: 'লেসন-০৩' }, { id: 'daily', label: 'দৈনন্দিন' }, { id: 'color', label: 'রং' }, { id: 'taste', label: 'স্বাদ' }, { id: 'family', label: 'পরিবার' }, { id: 'conversation', label: 'দৈনন্দিন কথা' }]
   }
 };
 
