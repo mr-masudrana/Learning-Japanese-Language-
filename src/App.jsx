@@ -1165,7 +1165,7 @@ const quizConfig = {
     gradient: "from-teal-500 to-emerald-600",
     darkGradient: "dark:from-teal-800 dark:to-emerald-900",
     accent: "text-teal-600 dark:text-teal-400",
-    categories: [{ id: 'lesson01', label: 'লেসন-০১' }, { id: 'lesson02', label: 'লেসন-০২' }, { id: 'lesson03', label: 'লেসন-০৩' }, { id: 'lesson04', label: 'লেসন-৪' }, { id: 'lesson05', label: 'লেসন-৫' }, { id: 'lesson06', label: 'লেসন-০৬' }, { id: 'lesson07', label: 'লেসন-০৭' }, { id: 'lesson08', label: 'লেসন-০৮' }, { id: 'lesson09', label: 'লেসন-০৯' }, { id: 'lesson10', label: 'লেসন-১০' }, { id: 'conversation', label: 'দৈনন্দিন কথা' }]
+    categories: [{ id: 'lesson01', label: 'লেসন-০১' }, { id: 'lesson02', label: 'লেসন-০২' }, { id: 'lesson03', label: 'লেসন-০৩' }, { id: 'lesson04', label: 'লেসন-০৪' }, { id: 'lesson05', label: 'লেসন-০৫' }, { id: 'lesson06', label: 'লেসন-০৬' }, { id: 'lesson07', label: 'লেসন-০৭' }, { id: 'lesson08', label: 'লেসন-০৮' }, { id: 'lesson09', label: 'লেসন-০৯' }, { id: 'lesson10', label: 'লেসন-১০' }, { id: 'lesson11', label: 'লেসন-১১' }, { id: 'lesson12', label: 'লেসন-১২' }, { id: 'lesson13', label: 'লেসন-১৩' }, { id: 'lesson14', label: 'লেসন-১৪' }, { id: 'lesson15', label: 'লেসন-১৫' }, { id: 'lesson16', label: 'লেসন-১৬' }, { id: 'lesson17', label: 'লেসন-১৭' }, { id: 'lesson18', label: 'লেসন-১৮' }, { id: 'lesson19', label: 'লেসন-১৯' }, { id: 'lesson20', label: 'লেসন-২০' }, { id: 'lesson21', label: 'লেসন-২১' }, { id: 'lesson22', label: 'লেসন-২২' }, { id: 'lesson23', label: 'লেসন-২৩' }, { id: 'lesson24', label: 'লেসন-২৪' }, { id: 'lesson25', label: 'লেসন-২৫' }, { id: 'conversation', label: 'দৈনন্দিন কথা' }]
   }
 };
 
