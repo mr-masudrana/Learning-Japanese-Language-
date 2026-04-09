@@ -568,7 +568,549 @@ const vocabData = [
   { char: 'となり', romaji: 'tonari', meaning: 'পাশে', type: 'lesson10' },
   { char: 'ちかく', romaji: 'chikaku', meaning: 'কাছে', type: 'lesson10' },
   { char: 'あいだ', romaji: 'aida', meaning: 'মাঝে', type: 'lesson10' },
+
+  // --- Lesson-11 ---
+  { char: 'います', romaji: 'imasu', meaning: 'আছে (মানুষ/প্রাণী)', type: 'lesson11' },
+  { char: 'います（にほんに）', romaji: 'imasu (nihon ni)', meaning: 'জাপানে থাকা', type: 'lesson11' },
+  { char: 'かかります', romaji: 'kakarimasu', meaning: 'সময়/টাকা লাগে', type: 'lesson11' },
+  { char: 'やすみます', romaji: 'yasumimasu', meaning: 'ছুটি নেওয়া', type: 'lesson11' },
+
+  { char: 'ひとつ', romaji: 'hitotsu', meaning: 'একটি', type: 'lesson11' },
+  { char: 'ふたつ', romaji: 'futatsu', meaning: 'দুটি', type: 'lesson11' },
+  { char: 'みっつ', romaji: 'mittsu', meaning: 'তিনটি', type: 'lesson11' },
+  { char: 'よっつ', romaji: 'yottsu', meaning: 'চারটি', type: 'lesson11' },
+  { char: 'いつつ', romaji: 'itsutsu', meaning: 'পাঁচটি', type: 'lesson11' },
+  { char: 'むっつ', romaji: 'muttsu', meaning: 'ছয়টি', type: 'lesson11' },
+  { char: 'ななつ', romaji: 'nanatsu', meaning: 'সাতটি', type: 'lesson11' },
+  { char: 'やっつ', romaji: 'yattsu', meaning: 'আটটি', type: 'lesson11' },
+  { char: 'ここのつ', romaji: 'kokonotsu', meaning: 'নয়টি', type: 'lesson11' },
+  { char: 'とお', romaji: 'too', meaning: 'দশটি', type: 'lesson11' },
+  { char: 'いくつ', romaji: 'ikutsu', meaning: 'কতটি', type: 'lesson11' },
+
+  { char: 'ひとり', romaji: 'hitori', meaning: 'একজন', type: 'lesson11' },
+  { char: 'ふたり', romaji: 'futari', meaning: 'দুইজন', type: 'lesson11' },
+
+  { char: 'りんご', romaji: 'ringo', meaning: 'আপেল', type: 'lesson11' },
+  { char: 'みかん', romaji: 'mikan', meaning: 'কমলা', type: 'lesson11' },
+  { char: 'サンドイッチ', romaji: 'sandoicchi', meaning: 'স্যান্ডউইচ', type: 'lesson11' },
+  { char: 'カレー', romaji: 'karee', meaning: 'কারি', type: 'lesson11' },
+  { char: 'アイスクリーム', romaji: 'aisukuriimu', meaning: 'আইসক্রিম', type: 'lesson11' },
+
+  { char: 'きって', romaji: 'kitte', meaning: 'ডাকটিকিট', type: 'lesson11' },
+  { char: 'はがき', romaji: 'hagaki', meaning: 'পোস্টকার্ড', type: 'lesson11' },
+  { char: 'ふうとう', romaji: 'fuutou', meaning: 'খাম', type: 'lesson11' },
+
+  { char: 'りょうしん', romaji: 'ryoushin', meaning: 'মা-বাবা', type: 'lesson11' },
+  { char: 'きょうだい', romaji: 'kyoudai', meaning: 'ভাইবোন', type: 'lesson11' },
+  { char: 'あに', romaji: 'ani', meaning: 'বড় ভাই', type: 'lesson11' },
+  { char: 'あね', romaji: 'ane', meaning: 'বড় বোন', type: 'lesson11' },
+
+  { char: 'おとうと', romaji: 'otouto', meaning: 'ছোট ভাই', type: 'lesson11' },
+  { char: 'いもうと', romaji: 'imouto', meaning: 'ছোট বোন', type: 'lesson11' },
+
+  { char: 'がいこく', romaji: 'gaikoku', meaning: 'বিদেশ', type: 'lesson11' },
+  { char: 'りゅうがくせい', romaji: 'ryuugakusei', meaning: 'বিদেশি ছাত্র', type: 'lesson11' },
+  { char: 'クラス', romaji: 'kurasu', meaning: 'ক্লাস', type: 'lesson11' },
+
+  { char: 'じかん', romaji: 'jikan', meaning: 'ঘন্টা', type: 'lesson11' },
+  { char: 'しゅうかん', romaji: 'shuukan', meaning: 'সপ্তাহ', type: 'lesson11' },
+  { char: 'かげつ', romaji: 'kagetsu', meaning: 'মাস', type: 'lesson11' },
+  { char: 'ねん', romaji: 'nen', meaning: 'বছর', type: 'lesson11' },
+
+  { char: 'ぐらい', romaji: 'gurai', meaning: 'প্রায়', type: 'lesson11' },
+  { char: 'どのくらい', romaji: 'dono kurai', meaning: 'কতক্ষণ', type: 'lesson11' },
+
+  { char: 'ぜんぶで', romaji: 'zenbu de', meaning: 'মোট', type: 'lesson11' },
+  { char: 'みんな', romaji: 'minna', meaning: 'সবাই', type: 'lesson11' },
+  { char: 'だけ', romaji: 'dake', meaning: 'শুধু', type: 'lesson11' },
+
+  // --- Lesson-12 ---
+  { char: 'かんたん', romaji: 'kantan', meaning: 'সহজ', type: 'lesson12' },
+  { char: 'ちかい', romaji: 'chikai', meaning: 'কাছাকাছি', type: 'lesson12' },
+  { char: 'とおい', romaji: 'tooi', meaning: 'দূরে', type: 'lesson12' },
+  { char: 'はやい', romaji: 'hayai', meaning: 'দ্রুত / তাড়াতাড়ি', type: 'lesson12' },
+  { char: 'おそい', romaji: 'osoi', meaning: 'ধীর / দেরি', type: 'lesson12' },
+
+  { char: 'おおい', romaji: 'ooi', meaning: 'বেশি', type: 'lesson12' },
+  { char: 'すくない', romaji: 'sukunai', meaning: 'কম', type: 'lesson12' },
+
+  { char: 'あたたかい', romaji: 'atatakai', meaning: 'গরম (আরামদায়ক)', type: 'lesson12' },
+  { char: 'すずしい', romaji: 'suzushii', meaning: 'শীতল', type: 'lesson12' },
+  { char: 'あまい', romaji: 'amai', meaning: 'মিষ্টি', type: 'lesson12' },
+  { char: 'からい', romaji: 'karai', meaning: 'ঝাল', type: 'lesson12' },
+  { char: 'おもい', romaji: 'omoi', meaning: 'ভারী', type: 'lesson12' },
+  { char: 'かるい', romaji: 'karui', meaning: 'হালকা', type: 'lesson12' },
+
+  { char: 'すき', romaji: 'suki', meaning: 'পছন্দ', type: 'lesson12' },
+
+  { char: 'きせつ', romaji: 'kisetsu', meaning: 'ঋতু', type: 'lesson12' },
+  { char: 'はる', romaji: 'haru', meaning: 'বসন্ত', type: 'lesson12' },
+  { char: 'なつ', romaji: 'natsu', meaning: 'গ্রীষ্ম', type: 'lesson12' },
+  { char: 'あき', romaji: 'aki', meaning: 'শরৎ', type: 'lesson12' },
+  { char: 'ふゆ', romaji: 'fuyu', meaning: 'শীত', type: 'lesson12' },
+
+  { char: 'てんき', romaji: 'tenki', meaning: 'আবহাওয়া', type: 'lesson12' },
+  { char: 'あめ', romaji: 'ame', meaning: 'বৃষ্টি', type: 'lesson12' },
+  { char: 'ゆき', romaji: 'yuki', meaning: 'তুষার', type: 'lesson12' },
+  { char: 'くもり', romaji: 'kumori', meaning: 'মেঘলা', type: 'lesson12' },
+
+  { char: 'ホテル', romaji: 'hoteru', meaning: 'হোটেল', type: 'lesson12' },
+  { char: 'くうこう', romaji: 'kuukou', meaning: 'এয়ারপোর্ট', type: 'lesson12' },
+  { char: 'うみ', romaji: 'umi', meaning: 'সমুদ্র', type: 'lesson12' },
+  { char: 'せかい', romaji: 'sekai', meaning: 'বিশ্ব', type: 'lesson12' },
+
+  { char: 'パーティー', romaji: 'paatii', meaning: 'পার্টি', type: 'lesson12' },
+  { char: 'おまつり', romaji: 'omatsuri', meaning: 'উৎসব', type: 'lesson12' },
+
+  { char: 'ぶたにく', romaji: 'butaniku', meaning: 'শূকরের মাংস', type: 'lesson12' },
+  { char: 'とりにく', romaji: 'toriniku', meaning: 'মুরগির মাংস', type: 'lesson12' },
+  { char: 'ぎゅうにく', romaji: 'gyuuniku', meaning: 'গরুর মাংস', type: 'lesson12' },
+
+  { char: 'レモン', romaji: 'remon', meaning: 'লেবু', type: 'lesson12' },
+  { char: 'どちら', romaji: 'dochira', meaning: 'কোনটি (২টির মধ্যে)', type: 'lesson12' },
+  { char: 'どちらも', romaji: 'dochira mo', meaning: 'দুটোই', type: 'lesson12' },
+  { char: 'いちばん', romaji: 'ichiban', meaning: 'সবচেয়ে', type: 'lesson12' },
   
+  // --- Lesson-13 ---
+  { char: 'あそびます', romaji: 'asobimasu', meaning: 'খেলা / ঘুরে বেড়ানো', type: 'lesson13' },
+  { char: 'およぎます', romaji: 'oyogimasu', meaning: 'সাঁতার কাটা', type: 'lesson13' },
+  { char: 'むかえます', romaji: 'mukaemasu', meaning: 'রিসিভ করা / নিতে যাওয়া', type: 'lesson13' },
+  { char: 'つかれます', romaji: 'tsukaremasu', meaning: 'ক্লান্ত হওয়া', type: 'lesson13' },
+
+  { char: 'けっこんします', romaji: 'kekkon shimasu', meaning: 'বিয়ে করা', type: 'lesson13' },
+  { char: 'かいものします', romaji: 'kaimono shimasu', meaning: 'শপিং করা', type: 'lesson13' },
+  { char: 'しょくじします', romaji: 'shokuji shimasu', meaning: 'খাবার খাওয়া', type: 'lesson13' },
+  { char: 'さんぽします', romaji: 'sanpo shimasu', meaning: 'হাঁটাহাঁটি করা', type: 'lesson13' },
+
+  { char: 'たいへん', romaji: 'taihen', meaning: 'কঠিন / ভয়ংকর', type: 'lesson13' },
+  { char: 'ほしい', romaji: 'hoshii', meaning: 'চাওয়া', type: 'lesson13' },
+
+  { char: 'ひろい', romaji: 'hiroi', meaning: 'বিস্তৃত', type: 'lesson13' },
+  { char: 'せまい', romaji: 'semai', meaning: 'সংকীর্ণ', type: 'lesson13' },
+
+  { char: 'プール', romaji: 'puuru', meaning: 'সুইমিং পুল', type: 'lesson13' },
+  { char: 'かわ', romaji: 'kawa', meaning: 'নদী', type: 'lesson13' },
+
+  { char: 'びじゅつ', romaji: 'bijutsu', meaning: 'চারুকলা', type: 'lesson13' },
+  { char: 'つり', romaji: 'tsuri', meaning: 'মাছ ধরা', type: 'lesson13' },
+  { char: 'スキー', romaji: 'sukii', meaning: 'স্কিইং', type: 'lesson13' },
+
+  { char: 'しゅうまつ', romaji: 'shuumatsu', meaning: 'সপ্তাহান্ত', type: 'lesson13' },
+  { char: 'おしょうがつ', romaji: 'oshougatsu', meaning: 'নববর্ষ', type: 'lesson13' },
+
+  { char: 'ごろ', romaji: 'goro', meaning: 'প্রায় (সময়)', type: 'lesson13' },
+  { char: 'なにか', romaji: 'nanika', meaning: 'কিছু', type: 'lesson13' },
+  { char: 'どこか', romaji: 'dokoka', meaning: 'কোথাও', type: 'lesson13' },
+
+  // --- Lesson-14 ---
+  { char: 'つけます', romaji: 'tsukemasu', meaning: 'চালু করা', type: 'lesson14' },
+  { char: 'けします', romaji: 'keshimasu', meaning: 'বন্ধ করা', type: 'lesson14' },
+  { char: 'あけます', romaji: 'akemasu', meaning: 'খোলা', type: 'lesson14' },
+  { char: 'しめます', romaji: 'shimemasu', meaning: 'বন্ধ করা', type: 'lesson14' },
+
+  { char: 'いそぎます', romaji: 'isogimasu', meaning: 'তাড়াহুড়া করা', type: 'lesson14' },
+  { char: 'まちます', romaji: 'machimasu', meaning: 'অপেক্ষা করা', type: 'lesson14' },
+  { char: 'もちます', romaji: 'mochimasu', meaning: 'ধরা / বহন করা', type: 'lesson14' },
+  { char: 'とります', romaji: 'torimasu', meaning: 'নেওয়া', type: 'lesson14' },
+  { char: 'てつだいます', romaji: 'tetsudaimasu', meaning: 'সাহায্য করা', type: 'lesson14' },
+  { char: 'よびます', romaji: 'yobimasu', meaning: 'ডাকা', type: 'lesson14' },
+  { char: 'はなします', romaji: 'hanashimasu', meaning: 'কথা বলা', type: 'lesson14' },
+  { char: 'つかいます', romaji: 'tsukaimasu', meaning: 'ব্যবহার করা', type: 'lesson14' },
+  { char: 'とめます', romaji: 'tomemasu', meaning: 'থামানো', type: 'lesson14' },
+  { char: 'みせます', romaji: 'misemasu', meaning: 'দেখানো', type: 'lesson14' },
+  { char: 'おしえます', romaji: 'oshiemasu', meaning: 'শেখানো / বলা', type: 'lesson14' },
+
+  { char: 'すわります', romaji: 'suwarimasu', meaning: 'বসা', type: 'lesson14' },
+  { char: 'たちます', romaji: 'tachimasu', meaning: 'দাঁড়ানো', type: 'lesson14' },
+  { char: 'はいります', romaji: 'hairimasu', meaning: 'প্রবেশ করা', type: 'lesson14' },
+  { char: 'でます', romaji: 'demasu', meaning: 'বের হওয়া', type: 'lesson14' },
+
+  { char: 'ふります', romaji: 'furimasu', meaning: 'বৃষ্টি/তুষার পড়া', type: 'lesson14' },
+  { char: 'コピーします', romaji: 'kopii shimasu', meaning: 'কপি করা', type: 'lesson14' },
+
+  { char: 'でんき', romaji: 'denki', meaning: 'বিদ্যুৎ', type: 'lesson14' },
+  { char: 'エアコン', romaji: 'eakon', meaning: 'এসি', type: 'lesson14' },
+
+  { char: 'パスポート', romaji: 'pasupooto', meaning: 'পাসপোর্ট', type: 'lesson14' },
+  { char: 'なまえ', romaji: 'namae', meaning: 'নাম', type: 'lesson14' },
+  { char: 'じゅうしょ', romaji: 'juusho', meaning: 'ঠিকানা', type: 'lesson14' },
+  { char: 'ちず', romaji: 'chizu', meaning: 'মানচিত্র', type: 'lesson14' },
+
+  { char: 'しお', romaji: 'shio', meaning: 'লবণ', type: 'lesson14' },
+  { char: 'さとう', romaji: 'satou', meaning: 'চিনি', type: 'lesson14' },
+
+  { char: 'もんだい', romaji: 'mondai', meaning: 'সমস্যা', type: 'lesson14' },
+  { char: 'こたえ', romaji: 'kotae', meaning: 'উত্তর', type: 'lesson14' },
+
+  { char: 'まっすぐ', romaji: 'massugu', meaning: 'সোজা', type: 'lesson14' },
+  { char: 'ゆっくり', romaji: 'yukkuri', meaning: 'ধীরে', type: 'lesson14' },
+  { char: 'すぐ', romaji: 'sugu', meaning: 'তৎক্ষণাৎ', type: 'lesson14' },
+  { char: 'また', romaji: 'mata', meaning: 'আবার', type: 'lesson14' },
+  { char: 'あとで', romaji: 'atode', meaning: 'পরে', type: 'lesson14' },
+  { char: 'もうすこし', romaji: 'mou sukoshi', meaning: 'আর একটু', type: 'lesson14' },
+
+  // --- Lesson-15 ---
+  { char: 'おきます', romaji: 'okimasu', meaning: 'রাখা / রাখা হয়', type: 'lesson15' },
+  { char: 'つくります', romaji: 'tsukurimasu', meaning: 'তৈরি করা', type: 'lesson15' },
+  { char: 'うります', romaji: 'urimasu', meaning: 'বিক্রি করা', type: 'lesson15' },
+  { char: 'しります', romaji: 'shirimasu', meaning: 'জানা', type: 'lesson15' },
+  { char: 'すみます', romaji: 'sumimasu', meaning: 'বাস করা', type: 'lesson15' },
+  { char: 'けんきゅうします', romaji: 'kenkyuu shimasu', meaning: 'গবেষণা করা', type: 'lesson15' },
+
+  { char: 'しりょう', romaji: 'shiryou', meaning: 'ডাটা / তথ্য', type: 'lesson15' },
+  { char: 'カタログ', romaji: 'katarogu', meaning: 'ক্যাটালগ', type: 'lesson15' },
+  { char: 'じこくひょう', romaji: 'jikokuhyou', meaning: 'সময়সূচি', type: 'lesson15' },
+
+  { char: 'ふく', romaji: 'fuku', meaning: 'কাপড়', type: 'lesson15' },
+  { char: 'せいひん', romaji: 'seihin', meaning: 'পণ্য', type: 'lesson15' },
+  { char: 'ソフト', romaji: 'sofuto', meaning: 'সফটওয়্যার', type: 'lesson15' },
+  { char: 'でんしじしょ', romaji: 'denshi jisho', meaning: 'ইলেকট্রনিক ডিকশনারি', type: 'lesson15' },
+
+  { char: 'けいざい', romaji: 'keizai', meaning: 'অর্থনীতি', type: 'lesson15' },
+  { char: 'しやくしょ', romaji: 'shiyakusho', meaning: 'সিটি অফিস', type: 'lesson15' },
+  { char: 'こうこう', romaji: 'koukou', meaning: 'হাই স্কুল', type: 'lesson15' },
+  { char: 'はいしゃ', romaji: 'haisha', meaning: 'দাঁতের ডাক্তার', type: 'lesson15' },
+
+  { char: 'どくしん', romaji: 'dokushin', meaning: 'অবিবাহিত', type: 'lesson15' },
+  { char: 'すみません', romaji: 'sumimasen', meaning: 'দুঃখিত', type: 'lesson15' },
+
+  { char: 'みなさん', romaji: 'minasan', meaning: 'সবাই', type: 'lesson15' },
+  { char: 'おもいだします', romaji: 'omoidasu', meaning: 'মনে পড়া', type: 'lesson15' },
+  { char: 'いらっしゃいます', romaji: 'irasshaimasu', meaning: 'আছেন (সম্মানসূচক)', type: 'lesson15' },
+
+  // --- Lesson-16 ---
+  { char: 'のります', romaji: 'norimasu', meaning: 'চড়া (যানবাহনে)', type: 'lesson16' },
+  { char: 'おります', romaji: 'orimasu', meaning: 'নামা', type: 'lesson16' },
+  { char: 'のりかえます', romaji: 'norikaemasu', meaning: 'বদলানো (যান)', type: 'lesson16' },
+  { char: 'あびます', romaji: 'abimasu', meaning: 'গোসল করা', type: 'lesson16' },
+
+  { char: 'いれます', romaji: 'iremasu', meaning: 'ভিতরে রাখা', type: 'lesson16' },
+  { char: 'だします', romaji: 'dashimasu', meaning: 'বের করা', type: 'lesson16' },
+  { char: 'おろします', romaji: 'oroshimasu', meaning: 'টাকা তোলা', type: 'lesson16' },
+
+  { char: 'はいります', romaji: 'hairimasu', meaning: 'প্রবেশ করা', type: 'lesson16' },
+  { char: 'でます', romaji: 'demasu', meaning: 'বের হওয়া', type: 'lesson16' },
+
+  { char: 'おします', romaji: 'oshimasu', meaning: 'চাপ দেওয়া', type: 'lesson16' },
+  { char: 'のみます', romaji: 'nomimasu', meaning: 'মদ পান করা', type: 'lesson16' },
+  { char: 'はじめます', romaji: 'hajimemasu', meaning: 'শুরু করা', type: 'lesson16' },
+  { char: 'けんがくします', romaji: 'kengaku shimasu', meaning: 'ভিজিট করা / দেখা', type: 'lesson16' },
+  { char: 'でんわします', romaji: 'denwa shimasu', meaning: 'ফোন করা', type: 'lesson16' },
+
+  { char: 'わかい', romaji: 'wakai', meaning: 'তরুণ', type: 'lesson16' },
+  { char: 'ながい', romaji: 'nagai', meaning: 'লম্বা', type: 'lesson16' },
+  { char: 'みじかい', romaji: 'mijikai', meaning: 'ছোট', type: 'lesson16' },
+  { char: 'あかるい', romaji: 'akarui', meaning: 'উজ্জ্বল', type: 'lesson16' },
+  { char: 'くらい', romaji: 'kurai', meaning: 'অন্ধকার', type: 'lesson16' },
+
+  { char: 'からだ', romaji: 'karada', meaning: 'শরীর', type: 'lesson16' },
+  { char: 'あたま', romaji: 'atama', meaning: 'মাথা', type: 'lesson16' },
+  { char: 'かみ', romaji: 'kami', meaning: 'চুল', type: 'lesson16' },
+  { char: 'かお', romaji: 'kao', meaning: 'মুখ', type: 'lesson16' },
+  { char: 'め', romaji: 'me', meaning: 'চোখ', type: 'lesson16' },
+  { char: 'みみ', romaji: 'mimi', meaning: 'কান', type: 'lesson16' },
+  { char: 'はな', romaji: 'hana', meaning: 'নাক', type: 'lesson16' },
+  { char: 'くち', romaji: 'kuchi', meaning: 'মুখ (মাউথ)', type: 'lesson16' },
+  { char: 'は', romaji: 'ha', meaning: 'দাঁত', type: 'lesson16' },
+  { char: 'おなか', romaji: 'onaka', meaning: 'পেট', type: 'lesson16' },
+  { char: 'あし', romaji: 'ashi', meaning: 'পা', type: 'lesson16' },
+
+  { char: 'サービス', romaji: 'saabisu', meaning: 'সেবা', type: 'lesson16' },
+  { char: 'ジョギング', romaji: 'jogingu', meaning: 'জগিং', type: 'lesson16' },
+  { char: 'シャワー', romaji: 'shawaa', meaning: 'শাওয়ার', type: 'lesson16' },
+
+  { char: 'みどり', romaji: 'midori', meaning: 'সবুজ', type: 'lesson16' },
+  { char: 'おてら', romaji: 'otera', meaning: 'মন্দির (বৌদ্ধ)', type: 'lesson16' },
+  { char: 'じんじゃ', romaji: 'jinja', meaning: 'শিন্তো মন্দির', type: 'lesson16' },
+
+  { char: 'どうやって', romaji: 'douyatte', meaning: 'কিভাবে', type: 'lesson16' },
+  { char: 'どの', romaji: 'dono', meaning: 'কোন (৩+)', type: 'lesson16' },
+  { char: 'どれ', romaji: 'dore', meaning: 'কোনটি', type: 'lesson16' },
+
+  // --- Lesson-17 ---
+  { char: 'おぼえます', romaji: 'oboemasu', meaning: 'মনে রাখা', type: 'lesson17' },
+  { char: 'わすれます', romaji: 'wasuremasu', meaning: 'ভুলে যাওয়া', type: 'lesson17' },
+  { char: 'なくします', romaji: 'nakushimasu', meaning: 'হারানো', type: 'lesson17' },
+  { char: 'はらいます', romaji: 'haraimasu', meaning: 'পরিশোধ করা', type: 'lesson17' },
+  { char: 'かえします', romaji: 'kaeshimasu', meaning: 'ফিরিয়ে দেওয়া', type: 'lesson17' },
+  { char: 'でかけます', romaji: 'dekakemasu', meaning: 'বাইরে যাওয়া', type: 'lesson17' },
+  { char: 'ぬぎます', romaji: 'nugimasu', meaning: 'খোলা (কাপড়)', type: 'lesson17' },
+
+  { char: 'もっていきます', romaji: 'motte ikimasu', meaning: 'নিয়ে যাওয়া', type: 'lesson17' },
+  { char: 'もってきます', romaji: 'motte kimasu', meaning: 'নিয়ে আসা', type: 'lesson17' },
+
+  { char: 'しんぱいします', romaji: 'shinpai shimasu', meaning: 'চিন্তা করা', type: 'lesson17' },
+  { char: 'ざんぎょうします', romaji: 'zangyou shimasu', meaning: 'ওভারটাইম কাজ করা', type: 'lesson17' },
+  { char: 'しゅっちょうします', romaji: 'shucchou shimasu', meaning: 'ব্যবসায়িক সফর', type: 'lesson17' },
+
+  { char: 'のみます', romaji: 'nomimasu', meaning: 'ঔষধ খাওয়া', type: 'lesson17' },
+  { char: 'はいります', romaji: 'hairimasu', meaning: 'গোসল করা', type: 'lesson17' },
+
+  { char: 'たいせつ', romaji: 'taisetsu', meaning: 'গুরুত্বপূর্ণ', type: 'lesson17' },
+  { char: 'だいじょうぶ', romaji: 'daijoubu', meaning: 'ঠিক আছে', type: 'lesson17' },
+  { char: 'あぶない', romaji: 'abunai', meaning: 'বিপজ্জনক', type: 'lesson17' },
+
+  { char: 'きんえん', romaji: 'kin-en', meaning: 'ধূমপান নিষেধ', type: 'lesson17' },
+  { char: 'ほけんしょう', romaji: 'hokenshou', meaning: 'স্বাস্থ্য বীমা কার্ড', type: 'lesson17' },
+
+  { char: 'ねつ', romaji: 'netsu', meaning: 'জ্বর', type: 'lesson17' },
+  { char: 'びょうき', romaji: 'byouki', meaning: 'রোগ', type: 'lesson17' },
+  { char: 'くすり', romaji: 'kusuri', meaning: 'ঔষধ', type: 'lesson17' },
+
+  { char: 'おふろ', romaji: 'ofuro', meaning: 'গোসল', type: 'lesson17' },
+
+  { char: 'うわぎ', romaji: 'uwagi', meaning: 'জ্যাকেট', type: 'lesson17' },
+  { char: 'したぎ', romaji: 'shitagi', meaning: 'আন্ডারওয়্যার', type: 'lesson17' },
+
+  { char: 'のど', romaji: 'nodo', meaning: 'গলা', type: 'lesson17' },
+
+  // --- Lesson-18 ---
+  { char: 'できます', romaji: 'dekimasu', meaning: 'পারা / সক্ষম হওয়া', type: 'lesson18' },
+  { char: 'あらいます', romaji: 'araimasu', meaning: 'ধোয়া', type: 'lesson18' },
+  { char: 'ひきます', romaji: 'hikimasu', meaning: 'বাদ্যযন্ত্র বাজানো', type: 'lesson18' },
+  { char: 'うたいます', romaji: 'utaimasu', meaning: 'গান গাওয়া', type: 'lesson18' },
+  { char: 'あつめます', romaji: 'atsumemasu', meaning: 'সংগ্রহ করা', type: 'lesson18' },
+  { char: 'すてます', romaji: 'sutemasu', meaning: 'ফেলে দেওয়া', type: 'lesson18' },
+  { char: 'かえます', romaji: 'kaemasu', meaning: 'বদলানো', type: 'lesson18' },
+  { char: 'うんてんします', romaji: 'unten shimasu', meaning: 'গাড়ি চালানো', type: 'lesson18' },
+  { char: 'よやくします', romaji: 'yoyaku shimasu', meaning: 'বুকিং করা', type: 'lesson18' },
+
+  { char: 'ピアノ', romaji: 'piano', meaning: 'পিয়ানো', type: 'lesson18' },
+  { char: 'メートル', romaji: 'meetoru', meaning: 'মিটার', type: 'lesson18' },
+  { char: 'げんきん', romaji: 'genkin', meaning: 'নগদ টাকা', type: 'lesson18' },
+
+  { char: 'しゅみ', romaji: 'shumi', meaning: 'শখ', type: 'lesson18' },
+  { char: 'にっき', romaji: 'nikki', meaning: 'ডায়েরি', type: 'lesson18' },
+
+  { char: 'おいのり', romaji: 'oinori', meaning: 'প্রার্থনা', type: 'lesson18' },
+
+  { char: 'かちょう', romaji: 'kachou', meaning: 'সেকশন হেড', type: 'lesson18' },
+  { char: 'ぶちょう', romaji: 'buchou', meaning: 'ডিপার্টমেন্ট হেড', type: 'lesson18' },
+  { char: 'しゃちょう', romaji: 'shachou', meaning: 'কোম্পানি প্রেসিডেন্ট', type: 'lesson18' },
+
+  { char: 'どうぶつ', romaji: 'doubutsu', meaning: 'প্রাণী', type: 'lesson18' },
+  { char: 'うま', romaji: 'uma', meaning: 'ঘোড়া', type: 'lesson18' },
+
+  { char: 'インターネット', romaji: 'intaanetto', meaning: 'ইন্টারনেট', type: 'lesson18' },
+
+  // --- Lesson-19 ---
+  { char: 'のぼります', romaji: 'noborimasu', meaning: 'উঠা / উপরে যাওয়া', type: 'lesson19' },
+  { char: 'とまります', romaji: 'tomarimasu', meaning: 'থাকা (হোটেলে)', type: 'lesson19' },
+
+  { char: 'そうじします', romaji: 'souji shimasu', meaning: 'পরিষ্কার করা', type: 'lesson19' },
+  { char: 'せんたくします', romaji: 'sentaku shimasu', meaning: 'কাপড় ধোয়া', type: 'lesson19' },
+  { char: 'なります', romaji: 'narimasu', meaning: 'হওয়া / হয়ে যাওয়া', type: 'lesson19' },
+
+  { char: 'ねむい', romaji: 'nemui', meaning: 'ঘুম পাচ্ছে', type: 'lesson19' },
+  { char: 'つよい', romaji: 'tsuyoi', meaning: 'শক্তিশালী', type: 'lesson19' },
+  { char: 'よわい', romaji: 'yowai', meaning: 'দুর্বল', type: 'lesson19' },
+
+  { char: 'れんしゅう', romaji: 'renshuu', meaning: 'প্র্যাকটিস', type: 'lesson19' },
+
+  { char: 'ゴルフ', romaji: 'gorufu', meaning: 'গলফ', type: 'lesson19' },
+  { char: 'すもう', romaji: 'sumou', meaning: 'সুমো কুস্তি', type: 'lesson19' },
+  { char: 'おちゃ', romaji: 'ocha', meaning: 'চা (টি সেরিমনি)', type: 'lesson19' },
+
+  { char: 'ひ', romaji: 'hi', meaning: 'দিন / তারিখ', type: 'lesson19' },
+  { char: 'ちょうし', romaji: 'choushi', meaning: 'অবস্থা / কন্ডিশন', type: 'lesson19' },
+
+  { char: 'いちど', romaji: 'ichido', meaning: 'একবার', type: 'lesson19' },
+  { char: 'いちども', romaji: 'ichidomo', meaning: 'একবারও না', type: 'lesson19' },
+  { char: 'だんだん', romaji: 'dandan', meaning: 'ধীরে ধীরে', type: 'lesson19' },
+  { char: 'もうすぐ', romaji: 'mousugu', meaning: 'শীঘ্রই', type: 'lesson19' },
+
+  { char: 'おかげさまで', romaji: 'okagesamade', meaning: 'ধন্যবাদ (কৃতজ্ঞতা)', type: 'lesson19' },
+  { char: 'でも', romaji: 'demo', meaning: 'কিন্তু', type: 'lesson19' },
+
+  { char: 'かんぱい', romaji: 'kanpai', meaning: 'চিয়ার্স!', type: 'lesson19' },
+  { char: 'ダイエット', romaji: 'daietto', meaning: 'ডায়েট', type: 'lesson19' },
+  { char: 'むり', romaji: 'muri', meaning: 'অসম্ভব / অতিরিক্ত', type: 'lesson19' },
+  { char: 'からだにいい', romaji: 'karada ni ii', meaning: 'স্বাস্থ্যের জন্য ভালো', type: 'lesson19' },
+
+  // --- Lesson-20 ---
+  { char: 'いります', romaji: 'irimasu', meaning: 'প্রয়োজন হওয়া', type: 'lesson20' },
+  { char: 'しらべます', romaji: 'shirabemasu', meaning: 'খোঁজ নেওয়া / তদন্ত করা', type: 'lesson20' },
+  { char: 'しゅうりします', romaji: 'shuuri shimasu', meaning: 'মেরামত করা', type: 'lesson20' },
+
+  { char: 'ぼく', romaji: 'boku', meaning: 'আমি (ছেলেদের informal)', type: 'lesson20' },
+  { char: 'きみ', romaji: 'kimi', meaning: 'তুমি (informal)', type: 'lesson20' },
+  { char: '〜くん', romaji: '~kun', meaning: 'সম্বোধন (ছেলেদের)', type: 'lesson20' },
+
+  { char: 'うん', romaji: 'un', meaning: 'হ্যাঁ (informal)', type: 'lesson20' },
+  { char: 'ううん', romaji: 'uun', meaning: 'না (informal)', type: 'lesson20' },
+
+  { char: 'ことば', romaji: 'kotoba', meaning: 'শব্দ / ভাষা', type: 'lesson20' },
+  { char: 'きもの', romaji: 'kimono', meaning: 'কিমোনো', type: 'lesson20' },
+  { char: 'ビザ', romaji: 'biza', meaning: 'ভিসা', type: 'lesson20' },
+
+  { char: 'はじめ', romaji: 'hajime', meaning: 'শুরু', type: 'lesson20' },
+  { char: 'おわり', romaji: 'owari', meaning: 'শেষ', type: 'lesson20' },
+
+  { char: 'こっち', romaji: 'kocchi', meaning: 'এই দিক', type: 'lesson20' },
+  { char: 'そっち', romaji: 'socchi', meaning: 'ও দিক (শ্রোতার কাছে)', type: 'lesson20' },
+  { char: 'あっち', romaji: 'acchi', meaning: 'ওখানে দূরে', type: 'lesson20' },
+  { char: 'どっち', romaji: 'docchi', meaning: 'কোনটা / কোন দিক', type: 'lesson20' },
+
+  { char: 'みんなで', romaji: 'minna de', meaning: 'সবাই মিলে', type: 'lesson20' },
+  { char: '〜けど', romaji: '~kedo', meaning: 'কিন্তু (informal)', type: 'lesson20' },
+  { char: 'おなかがいっぱいです', romaji: 'onaka ga ippai desu', meaning: 'পেট ভরে গেছে', type: 'lesson20' },
+
+  { char: 'よかったら', romaji: 'yokattara', meaning: 'যদি চান', type: 'lesson20' },
+  { char: 'いろいろ', romaji: 'iroiro', meaning: 'বিভিন্ন', type: 'lesson20' },
+
+  // --- Lesson-21 ---
+  { char: 'おもいます', romaji: 'omoimasu', meaning: 'মনে করা / ভাবা', type: 'lesson21' },
+  { char: 'いいます', romaji: 'iimasu', meaning: 'বলা', type: 'lesson21' },
+
+  { char: 'かちます', romaji: 'kachimasu', meaning: 'জেতা', type: 'lesson21' },
+  { char: 'まけます', romaji: 'makemasu', meaning: 'হারা', type: 'lesson21' },
+  { char: 'あります', romaji: 'arimasu', meaning: 'হওয়া / অনুষ্ঠিত হওয়া', type: 'lesson21' },
+
+  { char: 'やくにたちます', romaji: 'yaku ni tachimasu', meaning: 'উপকারে আসা', type: 'lesson21' },
+  { char: 'うごきます', romaji: 'ugokimasu', meaning: 'চলা / কাজ করা', type: 'lesson21' },
+  { char: 'やめます', romaji: 'yamemasu', meaning: 'ছেড়ে দেওয়া', type: 'lesson21' },
+
+  { char: 'きをつけます', romaji: 'ki o tsukemasu', meaning: 'সাবধান হওয়া', type: 'lesson21' },
+  { char: 'りゅうがくします', romaji: 'ryuugaku shimasu', meaning: 'বিদেশে পড়াশোনা করা', type: 'lesson21' },
+
+  { char: 'むだ', romaji: 'muda', meaning: 'অপচয়', type: 'lesson21' },
+  { char: 'ふべん', romaji: 'fuben', meaning: 'অসুবিধাজনক', type: 'lesson21' },
+
+  { char: 'すごい', romaji: 'sugoi', meaning: 'অসাধারণ', type: 'lesson21' },
+  { char: 'ほんとう', romaji: 'hontou', meaning: 'সত্য', type: 'lesson21' },
+  { char: 'うそ', romaji: 'uso', meaning: 'মিথ্যা', type: 'lesson21' },
+
+  { char: 'じどうしゃ', romaji: 'jidousha', meaning: 'গাড়ি', type: 'lesson21' },
+  { char: 'こうつう', romaji: 'koutsuu', meaning: 'যাতায়াত', type: 'lesson21' },
+  { char: 'ぶっか', romaji: 'bukka', meaning: 'দামের অবস্থা', type: 'lesson21' },
+
+  { char: 'ほうそう', romaji: 'housou', meaning: 'সম্প্রচার', type: 'lesson21' },
+  { char: 'ニュース', romaji: 'nyuusu', meaning: 'সংবাদ', type: 'lesson21' },
+
+  { char: 'アニメ', romaji: 'anime', meaning: 'অ্যানিমে', type: 'lesson21' },
+  { char: 'マンガ', romaji: 'manga', meaning: 'কমিকস', type: 'lesson21' },
+  { char: 'デザイン', romaji: 'dezain', meaning: 'ডিজাইন', type: 'lesson21' },
+
+  { char: 'ゆめ', romaji: 'yume', meaning: 'স্বপ্ন', type: 'lesson21' },
+  { char: 'てんさい', romaji: 'tensai', meaning: 'জিনিয়াস', type: 'lesson21' },
+
+  { char: 'しあい', romaji: 'shiai', meaning: 'খেলা / ম্যাচ', type: 'lesson21' },
+
+  { char: 'いけん', romaji: 'iken', meaning: 'মতামত', type: 'lesson21' },
+  { char: 'はなし', romaji: 'hanashi', meaning: 'কথা / গল্প', type: 'lesson21' },
+
+  { char: 'ちきゅう', romaji: 'chikyuu', meaning: 'পৃথিবী', type: 'lesson21' },
+  { char: 'つき', romaji: 'tsuki', meaning: 'চাঁদ', type: 'lesson21' },
+
+  { char: 'さいきん', romaji: 'saikin', meaning: 'সম্প্রতি', type: 'lesson21' },
+  { char: 'たぶん', romaji: 'tabun', meaning: 'সম্ভবত', type: 'lesson21' },
+  { char: 'きっと', romaji: 'kitto', meaning: 'নিশ্চয়ই', type: 'lesson21' },
+  { char: 'ほんとうに', romaji: 'hontou ni', meaning: 'সত্যিই', type: 'lesson21' },
+  { char: 'そんなに', romaji: 'sonna ni', meaning: 'এতটা না', type: 'lesson21' },
+
+  { char: '〜について', romaji: '~ni tsuite', meaning: 'সম্পর্কে', type: 'lesson21' },
+
+  // --- Lesson-22 ---
+  { char: 'きます', romaji: 'kimasu', meaning: 'পরা (শার্ট)', type: 'lesson22' },
+  { char: 'はきます', romaji: 'hakimasu', meaning: 'পরা (প্যান্ট/জুতা)', type: 'lesson22' },
+  { char: 'かぶります', romaji: 'kaburimasu', meaning: 'পরা (টুপি)', type: 'lesson22' },
+  { char: 'かけます', romaji: 'kakemasu', meaning: 'পরা (চশমা)', type: 'lesson22' },
+  { char: 'します', romaji: 'shimasu', meaning: 'পরা (টাই)', type: 'lesson22' },
+
+  { char: 'うまれます', romaji: 'umaremasu', meaning: 'জন্ম নেওয়া', type: 'lesson22' },
+
+  { char: 'わたしたち', romaji: 'watashitachi', meaning: 'আমরা', type: 'lesson22' },
+
+  { char: 'コート', romaji: 'kooto', meaning: 'কোট', type: 'lesson22' },
+  { char: 'セーター', romaji: 'seetaa', meaning: 'সোয়েটার', type: 'lesson22' },
+  { char: 'スーツ', romaji: 'suutsu', meaning: 'স্যুট', type: 'lesson22' },
+
+  { char: 'ぼうし', romaji: 'boushi', meaning: 'টুপি', type: 'lesson22' },
+  { char: 'めがね', romaji: 'megane', meaning: 'চশমা', type: 'lesson22' },
+
+  { char: 'ケーキ', romaji: 'keeki', meaning: 'কেক', type: 'lesson22' },
+  { char: 'おべんとう', romaji: 'obentou', meaning: 'লাঞ্চ বক্স', type: 'lesson22' },
+
+  { char: 'ロボット', romaji: 'robotto', meaning: 'রোবট', type: 'lesson22' },
+  { char: 'ユーモア', romaji: 'yuumoa', meaning: 'হিউমার', type: 'lesson22' },
+
+  { char: 'つごう', romaji: 'tsugou', meaning: 'সুবিধা / অবস্থা', type: 'lesson22' },
+  { char: 'よく', romaji: 'yoku', meaning: 'প্রায়ই', type: 'lesson22' },
+
+  // --- Lesson-23 ---
+  { char: 'ききます', romaji: 'kikimasu', meaning: 'জিজ্ঞেস করা', type: 'lesson23' },
+  { char: 'まわします', romaji: 'mawashimasu', meaning: 'ঘোরানো', type: 'lesson23' },
+  { char: 'ひきます', romaji: 'hikimasu', meaning: 'টানা', type: 'lesson23' },
+  { char: 'かえます', romaji: 'kaemasu', meaning: 'পরিবর্তন করা', type: 'lesson23' },
+  { char: 'さわります', romaji: 'sawarimasu', meaning: 'ছোঁয়া', type: 'lesson23' },
+  { char: 'でます', romaji: 'demasu', meaning: 'বের হওয়া (চেঞ্জ)', type: 'lesson23' },
+
+  { char: 'あるきます', romaji: 'arukimasu', meaning: 'হাঁটা', type: 'lesson23' },
+  { char: 'わたります', romaji: 'watarimasu', meaning: 'পার হওয়া', type: 'lesson23' },
+  { char: 'まがります', romaji: 'magarimasu', meaning: 'মোড় নেওয়া', type: 'lesson23' },
+
+  { char: 'さびしい', romaji: 'sabishii', meaning: 'একাকী', type: 'lesson23' },
+
+  { char: 'おゆ', romaji: 'oyu', meaning: 'গরম পানি', type: 'lesson23' },
+  { char: 'おと', romaji: 'oto', meaning: 'শব্দ', type: 'lesson23' },
+  { char: 'サイズ', romaji: 'saizu', meaning: 'সাইজ', type: 'lesson23' },
+  { char: 'こしょう', romaji: 'koshou', meaning: 'নষ্ট / সমস্যা', type: 'lesson23' },
+
+  { char: 'みち', romaji: 'michi', meaning: 'রাস্তা', type: 'lesson23' },
+  { char: 'こうさてん', romaji: 'kousaten', meaning: 'মোড় / ক্রসরোড', type: 'lesson23' },
+  { char: 'しんごう', romaji: 'shingou', meaning: 'ট্রাফিক লাইট', type: 'lesson23' },
+  { char: 'かど', romaji: 'kado', meaning: 'কোণা', type: 'lesson23' },
+  { char: 'はし', romaji: 'hashi', meaning: 'ব্রিজ', type: 'lesson23' },
+  { char: 'ちゅうしゃじょう', romaji: 'chuushajou', meaning: 'পার্কিং', type: 'lesson23' },
+  { char: 'たてもの', romaji: 'tatemono', meaning: 'বিল্ডিং', type: 'lesson23' },
+
+  { char: 'なんかいも', romaji: 'nankaimo', meaning: 'অনেকবার', type: 'lesson23' },
+  { char: '〜め', romaji: '~me', meaning: 'তম (ordinal)', type: 'lesson23' },
+
+  // --- Lesson-24 ---
+  { char: 'くれます', romaji: 'kuremasu', meaning: 'দেওয়া (আমাকে)', type: 'lesson24' },
+  { char: 'なおします', romaji: 'naoshimasu', meaning: 'মেরামত করা', type: 'lesson24' },
+
+  { char: 'つれていきます', romaji: 'tsurete ikimasu', meaning: 'নিয়ে যাওয়া (মানুষ)', type: 'lesson24' },
+  { char: 'つれてきます', romaji: 'tsurete kimasu', meaning: 'নিয়ে আসা', type: 'lesson24' },
+  { char: 'おくります', romaji: 'okurimasu', meaning: 'পৌঁছে দেওয়া', type: 'lesson24' },
+
+  { char: 'しょうかいします', romaji: 'shoukai shimasu', meaning: 'পরিচয় করানো', type: 'lesson24' },
+  { char: 'あんないします', romaji: 'annai shimasu', meaning: 'ঘুরিয়ে দেখানো', type: 'lesson24' },
+  { char: 'せつめいします', romaji: 'setsumei shimasu', meaning: 'ব্যাখ্যা করা', type: 'lesson24' },
+
+  { char: 'おじいさん', romaji: 'ojiisan', meaning: 'দাদু', type: 'lesson24' },
+  { char: 'おばあさん', romaji: 'obaasan', meaning: 'দাদী', type: 'lesson24' },
+
+  { char: 'じゅんび', romaji: 'junbi', meaning: 'প্রস্তুতি', type: 'lesson24' },
+  { char: 'ひっこし', romaji: 'hikkoshi', meaning: 'বাসা পরিবর্তন', type: 'lesson24' },
+
+  { char: 'おかし', romaji: 'okashi', meaning: 'মিষ্টি', type: 'lesson24' },
+  { char: 'ホームステイ', romaji: 'hoomusutei', meaning: 'হোমস্টে', type: 'lesson24' },
+
+  { char: 'ぜんぶ', romaji: 'zenbu', meaning: 'সব', type: 'lesson24' },
+  { char: 'じぶんで', romaji: 'jibun de', meaning: 'নিজে', type: 'lesson24' },
+
+  // --- Lesson-25 ---
+  { char: 'かんがえます', romaji: 'kangaemasu', meaning: 'ভাবা / চিন্তা করা', type: 'lesson25' },
+  { char: 'つきます', romaji: 'tsukimasu', meaning: 'পৌঁছানো', type: 'lesson25' },
+  { char: 'とります', romaji: 'torimasu', meaning: 'নেওয়া (বয়স/সময়)', type: 'lesson25' },
+  { char: 'たります', romaji: 'tarimasu', meaning: 'যথেষ্ট হওয়া', type: 'lesson25' },
+
+  { char: 'いなか', romaji: 'inaka', meaning: 'গ্রাম', type: 'lesson25' },
+  { char: 'チャンス', romaji: 'chansu', meaning: 'সুযোগ', type: 'lesson25' },
+  { char: 'おく', romaji: 'oku', meaning: 'কোটি (hundred million)', type: 'lesson25' },
+
+  { char: 'もし', romaji: 'moshi', meaning: 'যদি', type: 'lesson25' },
+  { char: 'いみ', romaji: 'imi', meaning: 'অর্থ', type: 'lesson25' },
+
+  { char: 'てんきん', romaji: 'tenkin', meaning: 'ট্রান্সফার', type: 'lesson25' },
+  { char: 'こと', romaji: 'koto', meaning: 'বিষয় / ব্যাপার', type: 'lesson25' },
+  { char: 'ひま', romaji: 'hima', meaning: 'ফ্রি সময়', type: 'lesson25' },
+
+  { char: 'がんばります', romaji: 'ganbarimasu', meaning: 'চেষ্টা করা', type: 'lesson25' },
+  { char: 'げんきで', romaji: 'genki de', meaning: 'ভালো থাকুন', type: 'lesson25' },
+
   // --- Daily Conversation ---
   { char: 'おはようございます', romaji: 'ohayou gozaimasu', meaning: 'শুভ সকাল', type: 'conversation' },
   { char: 'こんにちは', romaji: 'konnichiwa', meaning: 'শুভ দুপুর/হ্যালো', type: 'conversation' },
