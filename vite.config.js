@@ -13,7 +13,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
         name: 'Learning Japanese Language',
-        short_name: 'jfs-lc',
+        short_name: 'Japanese Language Test',
         description: 'A React application to learn Japanese',
         theme_color: '#ffffff',
         background_color: '#ffffff',
